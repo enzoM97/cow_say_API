@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A ruby on rails API based on the tutorial from https://medium.com/the-era-of-apis/how-to-build-a-restful-api-in-ruby-8265f1c47b72
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+run:
+1. run rails server: "rails s"
+2. type the following command in console:
+    curl localhost:3000/say \
+      -H 'Content-Type: application/json' \
+      -d '{"message": "Hello from RapidAPI", "cow": "stegosaurus", "balloon_type": "think"}' \
+    | ruby -r json -e "print JSON.parse(STDIN.read)['message']"
